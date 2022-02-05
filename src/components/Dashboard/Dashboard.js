@@ -4,10 +4,8 @@ import { Header } from './Header';
 import { PanelProductos } from './PanelProductos';
 import { Tienda } from '../Tienda';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
-    Link
   } from "react-router-dom";
 import { Configuracion } from './Configuracion';
 

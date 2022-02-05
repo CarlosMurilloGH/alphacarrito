@@ -1,5 +1,4 @@
 import "./App.css";
-import { Tienda } from "./components/Tienda";
 import { Dashboard } from "./components/Dashboard/Dashboard";
 import {CartProvider} from "react-use-cart";
 

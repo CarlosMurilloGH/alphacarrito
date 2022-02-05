@@ -66,6 +66,7 @@ export const PanelProductos = () => {
 			const storageRef = app.storage().ref();
 			const filePath = storageRef.child(data.name);
 			await filePath.put(selectedFile);
+			// eslint-disable-next-line
 			const url = await filePath.getDownloadURL();
 			filePath
 				.getDownloadURL()

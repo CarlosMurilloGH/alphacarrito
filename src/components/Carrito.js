@@ -5,7 +5,8 @@ import { useCart } from 'react-use-cart';
 
 export const Carrito = () => {
 
-    const {items}=useCart();
+    // eslint-disable-next-line
+    const {items}=useCart(); 
 
     return (
         <div className="carritobox">
