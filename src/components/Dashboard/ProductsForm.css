@@ -1,0 +1,32 @@
+.productForm{
+    display: block;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 7px;
+    padding:20px 30px 20px 30px;
+}
+.tituloform{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+input.inputForm {
+    width:90%
+}
+
+.uploadbox{
+    margin-bottom:20px;
+}
+
+.nombrebox{
+    margin-bottom:20px;
+}
+
+.descripcionbox{
+    margin-bottom:20px;
+}
+
+.preciobox{
+    margin-bottom:20px; 
+}

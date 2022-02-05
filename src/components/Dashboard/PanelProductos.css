@@ -1,0 +1,13 @@
+.homeContainer{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin:auto;
+    justify-items: center;
+    justify-content: center;
+}
+.productListGrid{
+    width: 65vw;
+}
+.productformcontainer{
+    width: 25vw;
+}

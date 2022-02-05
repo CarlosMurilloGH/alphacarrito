@@ -1,0 +1,27 @@
+.productCard{
+    background-color: #f1f1f1;
+    color:black;
+    padding:20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* adds shadow on hover */
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+.productcardnombre{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+.productCardImg {
+    max-height: 8rem;
+    margin:Auto;
+    display: block;
+  }
+  
+@media screen and (max-width: 860px){
+   img.productcardimg {
+    max-height: 8rem;
+  }
+}

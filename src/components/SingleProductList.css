@@ -1,0 +1,29 @@
+.productCardList{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-left:auto;
+    margin-right: auto;
+    padding-top:10px;
+    padding-bottom: 10px;
+    margin-bottom:20px;
+    justify-items: center;
+    border:2px solid black;
+    border-radius: 10px;
+}
+.productCardList:hover{
+    border:2px solid red;
+
+}
+
+.productCardList p{
+    margin:auto;
+}
+.productCardList button{
+    margin-top:auto;
+    margin-bottom: auto;
+}
+
+.productCardListImg{
+    max-width:6rem;
+    max-height: auto;
+}
