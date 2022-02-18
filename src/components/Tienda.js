@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { app } from "../fb";
 import { Carrito } from "./Carrito";
+import { Footer } from "./Footer";
 import { HeaderTienda } from "./HeaderTienda";
 import { SingleProduct } from "./SingleProduct";
 import "./Tienda.css";
@@ -45,6 +46,9 @@ export const Tienda = () => {
 				<div className="carritocontainer">
 					<Carrito />
 				</div>
+			</div>
+			<div>
+				<Footer />
 			</div>
 		</div>
 	);

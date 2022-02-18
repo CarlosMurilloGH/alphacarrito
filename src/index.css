@@ -1,8 +1,35 @@
-.mainbutton{
-    padding:10px 30px 10px 30px;
-    background-color: red;
+*{
+    padding:0px;
+    margin:0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.BotonPositivo{
+    border: none;
+    background-color: #00A884;
     color:white;
-    border:none;
-    border-radius: 7px;
-    cursor:pointer;
+    padding: 7px 10px;
+    border-radius: 2px;
+    font-size: 1rem; 
+    cursor: pointer;   
+}
+
+.BotonNegativo{
+    border: none;
+    background-color: #F84E6E;
+    color:white;
+    padding: 7px 10px;
+    border-radius: 2px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.BotonComprar{
+    border: none;
+    background-color: orange;
+    color:white;
+    padding: 7px 10px;
+    border-radius: 2px;
+    font-size: 1rem;
+    cursor: pointer;
 }

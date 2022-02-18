@@ -7,21 +7,19 @@
     justify-items: center;
 }
 
-.menuitem{
-    color:white;
-    text-decoration: none;
-}
 
 .menuitem {
-    font-size: 0.8rem;
-    color:White;
-    padding: 10px;
-    margin: auto;
-    margin-top:10px;
-    border-radius: 5px;
-    border:none;
-    background-color: #f15c45;
-    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color:black;
     cursor: pointer;
     text-align: center;
-  }
+    margin: auto;
+    text-decoration:none;
+}
+
+.dashboardcontainer{
+    background-color: #0A1014;
+    height: 100%;
+}
+  

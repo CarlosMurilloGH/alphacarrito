@@ -12,7 +12,7 @@ export const SingleProduct = (props) => {
       <p className="productCardDescription">{data.description}</p>
       <p className="productCardPrice">S/.{data.price}</p>
 
-      <button className="mainbutton" onClick={() => addItem(data)}>
+      <button className="BotonComprar" onClick={() => addItem(data)}>
         Comprar
       </button>
     </div>

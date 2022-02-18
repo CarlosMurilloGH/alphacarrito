@@ -8,7 +8,7 @@ function App() {
 		<div className="App">
 			<CartContextProvider>
 			<CartProvider>
-				<Dashboard />
+				<Dashboard/>
 			</CartProvider>
 			</CartContextProvider>
 			

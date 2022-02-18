@@ -33,31 +33,36 @@ export const Carrito = () => {
   return a.order - b.order;
 }).map((item, index) => {
         return (
-          <div key={index}>
+          <div key={index} className="gridcart">
             <div>
-              articulo:{item.name} X {item.qnty}
-              <br></br>
-              precio:{item.price}
-              <img
-                className="productCardImg"
-                src={item.imageURL}
-                alt={item.name}
-              />
+              <p className="productocarrito">{item.name}</p> 
             </div>
-            <div>
-              <button onClick={()=>removeItem(item)} title="remover">-</button>
-              <button  onClick={()=>addItem(item)} title="adicionar">+</button>
+
+            <div className="cantidadcarritos">
+              <button onClick={()=>removeItem(item)} title="remover" className="BotonNegativo">-</button>
+              <button  onClick={()=>addItem(item)} title="adicionar" className="BotonPositivo" >+</button>
             </div>
+
+            <div className="qntyproducts">
+              <p>x</p> 
+              <p>{item.qnty}</p>
+              <p className="preciocarrito">S/.{item.price}</p>
+            </div>
+            
           </div>
         );
       })}
       {items.length !== 0 && (
-        <div>
-          Total { getString().total}
-          <button>
-            <a
-            rel="noreferrer"
-              target="_blank"
+        <div className="totalcontainer">
+          <hr></hr>
+          <div className="totalcarrito">
+            <p className="totallabel">Total:</p>
+            <p className="totalnumero">S/.{ getString().total}</p>
+          </div>
+         
+          <button className="BotonComprar">
+            <a className="anchorcomprar"
+            rel="noreferrer" target="_blank"
               href={`https://api.whatsapp.com/send?phone=51956348183&text=${
                 getString().string
               }`}

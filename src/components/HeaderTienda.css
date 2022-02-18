@@ -1,0 +1,10 @@
+.headertienda{
+    width: 95vw;
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+h1.NombreTienda{
+    color: white;
+}

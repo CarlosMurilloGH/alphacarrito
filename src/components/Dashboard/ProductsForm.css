@@ -1,12 +1,17 @@
 .productForm{
     display: block;
-    width: 100%;
-    border: 2px solid black;
-    border-radius: 7px;
-    padding:20px 30px 20px 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(160, 160, 160);
+    background-color: #111B21;
+    color:white;
+    padding:2rem;
 }
+
+
 .tituloform{
-    font-size: 20px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
     font-weight: bold;
     text-align: center;
 }
@@ -16,17 +21,33 @@ input.inputForm {
 }
 
 .uploadbox{
-    margin-bottom:20px;
+    margin-bottom:1rem;
 }
 
 .nombrebox{
-    margin-bottom:20px;
+    margin-bottom:1rem;
 }
 
 .descripcionbox{
-    margin-bottom:20px;
+    margin-bottom:1rem;
 }
 
 .preciobox{
-    margin-bottom:20px; 
+    display: block;
+    margin-bottom:1rem; 
+}
+
+input.inputForm {
+    width: 90%;
+    background: #202C33;
+    border: none;
+    padding: 0.6rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(160, 160, 160);
+    color:white;
+}
+
+input.inputForm::placeholder {
+    color: white;
 }

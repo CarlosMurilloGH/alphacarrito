@@ -24,7 +24,7 @@ export const SingleProductList = (props) => {
 			<p className="productCardListName">{data.name}</p>
 			<p className="productCardListDescription">{data.description}</p>
 			<p className="productCardListPrice">S/.{data.price}</p>
-			<button className="mainbutton" onClick={onDeleteLink}>Eliminar</button>
+			<button className="BotonNegativo" onClick={onDeleteLink}>Eliminar</button>
 		</div>
 	);
 };

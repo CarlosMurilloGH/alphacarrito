@@ -14,9 +14,9 @@ export const Dashboard = () => {
       </div>
 
       <Switch>
-        <Route path="/tienda" exact={true} component={Tienda} />
         <Route path="/productos" exact={true} component={PanelProductos} />
         <Route path="/configuracion" exact={true} component={Configuracion} />
+        <Route path="/" exact={true} component={Tienda} />
       </Switch>
     </div>
   );

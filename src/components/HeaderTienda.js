@@ -1,10 +1,11 @@
 import React,{useState,useEffect} from 'react';
+import "./HeaderTienda.css";
 import { app } from '../fb';
 
 
 export const HeaderTienda = ({Configuracion}) => {
 
-    const [info,setInfo]=useState([]);
+	const [info,setInfo]=useState([]);
   
 	
 
@@ -31,14 +32,16 @@ export const HeaderTienda = ({Configuracion}) => {
 	}, []);
 
 
-
     return (
-        <div>
-            {
+        <div className='headertienda'>
+			<div>
+			{
             info.map(info=>(
-                <h1 key={info.id}>{info.negocio}</h1>
+                <h1 className='NombreTienda' key={info.id}>{info.negocio}</h1>
             ))    
             }
+			</div>
+
         </div>
     )
 }

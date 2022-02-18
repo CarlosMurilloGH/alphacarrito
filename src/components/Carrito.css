@@ -6,3 +6,76 @@
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
   }
+ 
+.gridcart{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.qntyproducts{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.BotonNegativo {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.BotonPositivo {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.totalcontainer{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.totalcarrito {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.totallabel{
+  text-align: left; 
+}
+
+.totalnumero{
+  text-align: end;
+}
+
+a.anchorcomprar{
+  text-decoration: none;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.productocarrito{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 8rem;
+    text-align: center;
+    text-align: left;
+}
+
+.preciocarrito{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 4rem;
+  text-align: center;
+  text-align: right;
+}

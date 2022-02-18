@@ -16,7 +16,7 @@ export const ProductsForm = (props) => {
 				<p>Sube o Edita tu producto</p>
 			</div>
 			<div className="uploadbox">
-				<label className="uploadButton">Imagen</label>
+				<label className="uploadButton">Imagen del producto </label>
 				<input
 					type="file"
 					onChange={(e) => setSelectedFile(e.target.files[0])}
@@ -24,7 +24,6 @@ export const ProductsForm = (props) => {
 				/>
 			</div>
 			<div className="nombrebox">
-				<label>Nombre</label>
 				<input
 					type="text"
 					onChange={(e) => setData({ ...data, name: e.target.value })}
@@ -35,18 +34,16 @@ export const ProductsForm = (props) => {
 				/>
 			</div>
 			<div className="descripcionbox">
-				<label>Descripcion</label>
 				<input
 					type="text"
 					onChange={(e) => setData({ ...data, description: e.target.value })}
 					value={data.description}
 					name="description"
-					placeholder="descripcion del producto"
+					placeholder="descripción del producto"
 					className="inputForm"
 				/>
 			</div>
 			<div className="preciobox">
-				<label>Precio</label>
 				<input
 					type="number"
 					onChange={(e) => setData({ ...data, price: e.target.value })}
@@ -56,9 +53,9 @@ export const ProductsForm = (props) => {
 					className="inputForm"
 				/>
 			</div>
-			<button className="buttonForm" onClick={submitHandler}>Guardar</button>
-			<button className="buttonForm" onClick={clearData}>
-				Resetear
+			<button className="BotonPositivo" onClick={submitHandler}>Guardar</button>
+			<button className="BotonNegativo" onClick={clearData}>
+				Limpiar
 			</button> 
 		</form>
 	);
