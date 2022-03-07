@@ -2,11 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
-    align-items: center;
-    margin: auto;
     padding: 1rem;
     border-top: 1px solid white;
-    margin: 1rem;
+    background-color: #0A1014;
 }
 
 .titulofooter{
@@ -17,6 +15,11 @@
 .logocolumn h2 {
     text-align: center;
     font-size: 2rem;
+}
+
+.logocolumn{
+    display: block;
+    margin: auto;
 }
 
 .columnafooter1 p,h2{

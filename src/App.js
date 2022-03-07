@@ -1,15 +1,18 @@
+import React from "react";
 import "./App.css";
-import { Dashboard } from "./components/Dashboard/Dashboard";
 import {CartProvider} from "react-use-cart";
 import { CartContextProvider } from "./contexts/CartContext";
+import { Tienda } from "./components/Tienda";
+
 
 function App() {
+
 	return (
 		<div className="App">
 			<CartContextProvider>
-			<CartProvider>
-				<Dashboard/>
-			</CartProvider>
+				<CartProvider>
+					<Tienda />
+				</CartProvider>
 			</CartContextProvider>
 			
 		</div>

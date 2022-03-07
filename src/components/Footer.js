@@ -2,12 +2,6 @@ import React,{useState,useEffect} from 'react';
 import "./Footer.css";
 import { app } from '../fb';
 
-import american from "../medios/metodos de pago/american-express-logo.png";
-import mastercard from "../medios/metodos de pago/master-card-logo.png";
-import plin from "../medios/metodos de pago/plin-logo.png";
-import visa from "../medios/metodos de pago/visa-logo.png";
-import yape from "../medios/metodos de pago/yape-logo.png";
-
 import facebook from "../medios/redes sociales/facebook.svg";
 import google from "../medios/redes sociales/google.svg";
 import instagram from "../medios/redes sociales/instagram.svg";
@@ -87,12 +81,6 @@ export const Footer = ({Configuracion}) => {
 
                 </div>
 
-                <div>
-                    <h2 className='titulofooter'>Zonas de reparto</h2>
-                    <p>Los Olivos</p>
-                    <p>Trujillo</p>
-                    <p>Comas</p>
-                </div>
             </div>
 
             <div className='columnafooter2'>
@@ -165,29 +153,6 @@ export const Footer = ({Configuracion}) => {
 
             <div className='columnafooter3'>
                 <div>
-                    <h2 className='titulofooter'>Formas de pago</h2>
-                    <div className='gridpagos'>
-                        <div>
-                            <img  className='formapagoimg' src={american} alt="american express logo" />
-                        </div>
-
-                        <div>
-                            <img className='formapagoimg' src={mastercard} alt="mastercard logo" />
-                        </div>
-
-                        <div>
-                            <img className='formapagoimg' src={visa} alt="visa logo" />
-                        </div>
-
-                        <div>
-                            <img className='formapagoimg' src={plin} alt="plin logo" />
-                        </div>
-
-                        <div>
-                            <img className='formapagoimg' src={yape} alt="yape logo" />
-                        </div>
-
-                    </div>
                     <h2 className='titulofooter'>Redes Sociales</h2>
                     <div className='redesgrid'>
                         <div>

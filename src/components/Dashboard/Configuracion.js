@@ -7,10 +7,6 @@ const initialConfig={
     negocio:"",
 };
 
-const initialColors={
-    color1:"",
-}
-
 const initialDireccion={
     direccionlinea1:"",
     direccionlinea2:"",
@@ -51,18 +47,10 @@ const initialDomingo={
     horadomingo2:"",   
 }
 
-const initialWsp={
-    wsplink:"",
-}
-
-const initialFb={
-    facebooklink:"",
-}
 
 export const Configuracion = () => {
 
     const [dataInfo,setDataInfo]=useState(initialConfig);
-    const [color,setColor]=useState(initialColors);
 
     const [direccion,setDireccion]=useState(initialDireccion);
 
@@ -73,10 +61,6 @@ export const Configuracion = () => {
     const [timeViernes,setTimeViernes]=useState(initialViernes);
     const [timeSabado,setTimeSabado]=useState(initialSabado);
     const [timeDomingo,setTimeDomingo]=useState(initialDomingo);
-
-    const [wspLink,setWspLink]=useState(initialWsp);
-    const [facebookLink,setFacebookLink]=useState(initialFb);
-
 
 
 
@@ -155,25 +139,6 @@ export const Configuracion = () => {
         .set({...timeDomingo })
     }
 
-    const saveWsp=async(e)=>{
-        e.preventDefault();
-        app
-        .firestore()
-        .collection("configuracion")
-        .doc("wsplink")
-        .set({...wspLink })
-    }
-
-    const saveFacebook=async(e)=>{
-        e.preventDefault();
-        app
-        .firestore()
-        .collection("configuracion")
-        .doc("facebookLink")
-        .set({...facebookLink })
-    }
-
-
 
 
     const saveInfo=async(e)=>{
@@ -188,17 +153,6 @@ export const Configuracion = () => {
         )
     }
 
-    const saveColors=async(e)=>{
-        e.preventDefault();
-        app
-        .firestore()
-        .collection("configuracion")
-        .doc("colores")
-        .set({...color})
-        .then(
-            console.log("wardado")
-        )
-    }
 
 
     return (
@@ -207,7 +161,7 @@ export const Configuracion = () => {
                 <h1 className="titulos">Configuracion</h1>
             </div>
 
-            <div>
+            <div className='inputformcontainer'>
                 <form onSubmit={saveInfo}>
                     <div className="nombrebox">
                         <p>Nombre del negocio</p>
@@ -225,10 +179,10 @@ export const Configuracion = () => {
             </div>
 
             <div>
-                <h2>Footer</h2>
+                <h2 className="titulos">Información de tu negocio</h2>
             </div>
 
-            <div>
+            <div className='inputformcontainer'>
                 <form onSubmit={saveDireccion}>
                     <div className="nombrebox">
                         <p>direccion del negocio linea 1</p>
@@ -256,183 +210,115 @@ export const Configuracion = () => {
             </div>
 
             <div>
-                <form onSubmit={saveLunes}>
-                    <label>Lunes</label>
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeLunes({...timeLunes, horalunes1:e.target.value})}
-                    />
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeLunes({...timeLunes, horalunes2:e.target.value})}
-                    />    
-                     <button className='BotonPositivo'>Guardar</button>
-                </form>
+                <h2>Horario de atención de tu negocio</h2>
             </div>
-
-            <div>
-                <form onSubmit={saveMartes}>
-                    <label>Martes</label>
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeMartes({...timeMartes, horamartes1:e.target.value})}
-                    />
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeMartes({...timeMartes, horamartes2:e.target.value})}
-                    />    
-                     <button className='BotonPositivo'>Guardar</button>
-                </form>
-            </div>
-
-            <div>
-                <form onSubmit={saveMiercoles}>
-                    <label>Miercoles</label>
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeMiercoles({...timeMiercoles, horamiercoles1:e.target.value})}
-                    />
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeMiercoles({...timeMiercoles, horamiercoles2:e.target.value})}
-                    />    
-                     <button className='BotonPositivo'>Guardar</button>
-                </form>
-            </div>
-
-            <div>
-                <form onSubmit={saveJueves}>
-                    <label>Jueves</label>
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeJueves({...timeJueves, horajueves1:e.target.value})}
-                    />
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeJueves({...timeJueves, horajueves2:e.target.value})}
-                    />    
-                     <button className='BotonPositivo'>Guardar</button>
-                </form>
-            </div>
-
-            <div>
-                <form onSubmit={saveViernes}>
-                    <label>Viernes</label>
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeViernes({...timeViernes, horaviernes1:e.target.value})}
-                    />
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeViernes({...timeViernes, horaviernes2:e.target.value})}
-                    />    
-                     <button className='BotonPositivo'>Guardar</button>
-                </form>
-            </div>
-
-            <div>
-                <form onSubmit={saveSabado}>
-                    <label>Sabado</label>
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeSabado({...timeSabado, horasabado1:e.target.value})}
-                    />
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeSabado({...timeSabado, horasabado2:e.target.value})}
-                    />    
-                     <button className='BotonPositivo'>Guardar</button>
-                </form>
-            </div>
-
-            <div>
-                <form onSubmit={saveDomingo}>
-                    <label>Domingo</label>
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeDomingo({...timeDomingo, horadomingo1:e.target.value})}
-                    />
-                    <input
-                        type="time"
-                        onChange={(e)=> setTimeDomingo({...timeDomingo, horadomingo2:e.target.value})}
-                    />    
-                     <button className='BotonPositivo'>Guardar</button>
-                </form>
-            </div>
-
-
-            <div>
-                <h2>Redes Sociales</h2>
-            </div>
-
-            <div>
-                <form onSubmit={saveWsp}>
-                    <div className="nombrebox">
-                        <p>Tu Número de whatsapp</p>
+            <div className='horariocontainer'>
+                <div className='formhorario'>
+                    <form onSubmit={saveLunes}>
+                        <label className='labelcontainer'>Lunes</label>
                         <input
-                            type="text"
-                            name="negocio"
-                            placeholder="nombre del negocio"
-                            className="inputForm"
-                            onChange={(e) => setWspLink({ ...wspLink, wsplink: e.target.value })}
+                            type="time"
+                            onChange={(e)=> setTimeLunes({...timeLunes, horalunes1:e.target.value})}
                         />
-                    </div>
-                 
-                    <button className='BotonPositivo'>Guardar</button>
-                </form> 
-            </div>
-
-            <div>
-                <form onSubmit={saveFacebook}>
-                    <div className="nombrebox">
-                        <p>Tu link de facebook</p>
                         <input
-                            type="text"
-                            name="negocio"
-                            placeholder="nombre del negocio"
-                            className="inputForm"
-                            onChange={(e) => setFacebookLink({ ...facebookLink, facebooklink: e.target.value })}
+                            type="time"
+                            onChange={(e)=> setTimeLunes({...timeLunes, horalunes2:e.target.value})}
+                        />    
+                        <button className='BotonPositivo'>Guardar</button>
+                    </form>
+                </div>
+
+                <div className='formhorario'>
+                    <form onSubmit={saveMartes}>
+                        <label className='labelcontainer'>Martes</label>
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeMartes({...timeMartes, horamartes1:e.target.value})}
                         />
-                    </div>
-                 
-                    <button className='BotonPositivo'>Guardar</button>
-                </form> 
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeMartes({...timeMartes, horamartes2:e.target.value})}
+                        />    
+                        <button className='BotonPositivo'>Guardar</button>
+                    </form>
+                </div>
+
+                <div className='formhorario'>
+                    <form onSubmit={saveMiercoles}>
+                        <label className='labelcontainer'>Miercoles</label>
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeMiercoles({...timeMiercoles, horamiercoles1:e.target.value})}
+                        />
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeMiercoles({...timeMiercoles, horamiercoles2:e.target.value})}
+                        />    
+                        <button className='BotonPositivo'>Guardar</button>
+                    </form>
+                </div>
+
+                <div className='formhorario'>
+                    <form onSubmit={saveJueves}>
+                        <label className='labelcontainer'>Jueves</label>
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeJueves({...timeJueves, horajueves1:e.target.value})}
+                        />
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeJueves({...timeJueves, horajueves2:e.target.value})}
+                        />    
+                        <button className='BotonPositivo'>Guardar</button>
+                    </form>
+                </div>
+
+                <div className='formhorario'>
+                    <form onSubmit={saveViernes}>
+                        <label className='labelcontainer'>Viernes</label>
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeViernes({...timeViernes, horaviernes1:e.target.value})}
+                        />
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeViernes({...timeViernes, horaviernes2:e.target.value})}
+                        />    
+                        <button className='BotonPositivo'>Guardar</button>
+                    </form>
+                </div>
+
+                <div className='formhorario'>
+                    <form onSubmit={saveSabado}>
+                        <label className='labelcontainer'>Sabado</label>
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeSabado({...timeSabado, horasabado1:e.target.value})}
+                        />
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeSabado({...timeSabado, horasabado2:e.target.value})}
+                        />    
+                        <button className='BotonPositivo'>Guardar</button>
+                    </form>
+                </div>
+
+                <div className='formhorario'>
+                    <form onSubmit={saveDomingo}>
+                        <label className='labelcontainer'>Domingo</label>
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeDomingo({...timeDomingo, horadomingo1:e.target.value})}
+                        />
+                        <input
+                            type="time"
+                            onChange={(e)=> setTimeDomingo({...timeDomingo, horadomingo2:e.target.value})}
+                        />    
+                        <button className='BotonPositivo'>Guardar</button>
+                    </form>
+                </div>
             </div>
-
-            <div>
-                <h2>Colores</h2>
-            </div>
-
-            <div>
-                <form onSubmit={saveColors}>
-                    
-                    <div className='colorselector'>
-                        <label>Color primario </label>
-                        <input 
-                            type="color" 
-                            onChange={(e) => setColor({ ...color, color1: e.target.value })}
-                        />
-                    </div>
-
-                    <div className='colorselector'>
-                        <label>Color secundario </label>
-                        <input 
-                            type="color" 
-                            onChange={(e) => setColor({ ...color, color2: e.target.value })}
-                        />
-                    </div>
-
-                    <div className='colorselector'>
-                        <label>Color terciario </label>
-                        <input 
-                            type="color" 
-                            onChange={(e) => setColor({ ...color, color3: e.target.value })}    
-                        />
-                   </div>
-
-                    <button className='BotonPositivo'>Guardar</button>
-                </form>
-            </div>                     
+            
         </div>
     )
 }

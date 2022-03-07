@@ -1,8 +1,10 @@
 .headertienda{
     width: 95vw;
     display: block;
-    margin: auto;
-    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 h1.NombreTienda{

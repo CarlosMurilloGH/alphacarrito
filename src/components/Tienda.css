@@ -1,7 +1,6 @@
 .tiendaContainer{
-    padding: 1rem;
+background-color:#0a1014;
 }
-
 .tiendagrid {
     display: flex;
     margin: auto;
@@ -9,6 +8,7 @@
     justify-items: center;
     align-content: center;
     row-gap: 1rem;
+    padding: 2rem;
 }
 
 .productsGrid{
@@ -23,7 +23,6 @@
 .carritocontainer{
     margin-left: auto;
     margin-right: auto;
-
 }
 
 @media screen and (max-width: 1700px){
