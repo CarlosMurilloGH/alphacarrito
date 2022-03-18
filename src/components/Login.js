@@ -1,52 +1,106 @@
-import React, { useRef,useState } from 'react';
-import { signup, useAuth, auth,login } from '../fb';
-import { signOut } from 'firebase/auth';
-import { useHistory } from 'react-router-dom';
+import { useState } from "react";
+import "./Login.css";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import { auth } from "../fb";
+import { useLocation, useNavigate } from "react-router";
+
+function Login() {
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  const [user, setUser] = useState({});
+
+  const navigate=useNavigate();
+  const location =useLocation();
 
 
-export const Login = () => {
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
 
-  let history=useHistory();
-
-  const [loading,setLoading] = useState(false);
-  const currentUser = useAuth();
-
-  const emailRef=useRef();
-  const passwordRef=useRef();
-  
-  async function handleLogin(){
-    setLoading(true);
-    try{
-      await login(emailRef.current.value, passwordRef.current.value);
-    } catch{
-      alert("Este email ya está en uso");
+  const register = async () => {
+    try {
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
     }
-    setLoading(false);
-    history.push("/administrador")
-  }
+  };
 
-  async function handleSignup(){
-    setLoading(true);
-    try{
-      await signup(emailRef.current.value, passwordRef.current.value);
-    } catch{
-      alert("Este email ya está en uso");
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    } if(location.state?.from) {
+      navigate(location.state.from);
     }
-  }
+  };
 
+  const logout = async () => {
+    await signOut(auth);
+  };
 
   return (
-    <div>
+    <div className="Logincontainer">
       <div>
-        Usuario Actual {currentUser?.email}
+        <h2 className="titlelogin">Registrate</h2>
+        <input
+          placeholder="Email..."
+          onChange={(event) => {
+            setRegisterEmail(event.target.value);
+          }}
+        />
+        <input
+          placeholder="Password..."
+          onChange={(event) => {
+            setRegisterPassword(event.target.value);
+          }}
+        />
+
+        <button onClick={register}> Create User</button>
       </div>
-      <form>
-          <input ref={emailRef} type="email"/>
-          <input ref={passwordRef} type="password" />
-          <button disabled={loading || currentUser } onClick={handleSignup}>Registrarse</button>
-          <button disabled={loading || currentUser } onClick={handleLogin}>Login</button>
-          <button disabled={loading || !currentUser } onClick={()=>signOut(auth)}>Logout</button>
-      </form>
+
+      <div>
+        <h2 className="titlelogin"> Inicia tu sesión </h2>
+        <input
+          placeholder="Email..."
+          onChange={(event) => {
+            setLoginEmail(event.target.value);
+          }}
+        />
+        <input
+          placeholder="Password..."
+          onChange={(event) => {
+            setLoginPassword(event.target.value);
+          }}
+        />
+
+        <button onClick={login}> Login</button>
+      </div>
+
+      <h4> User Logged In: </h4>
+      {user?.email}
+
+      <button onClick={logout}> Sign Out </button>
     </div>
-  )
+  );
 }
+
+export default Login;

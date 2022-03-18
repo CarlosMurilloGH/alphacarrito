@@ -1,6 +1,7 @@
 .homeContainer {
     display: flex;
     margin: auto;
+    background-color: #0A1014;
 }
 
 .productListGrid {

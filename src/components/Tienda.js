@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { app } from "../fb";
+import {app} from "../fb";
 import { Carrito } from "./Carrito";
 import { Footer } from "./Footer";
 import { HeaderTienda } from "./HeaderTienda";

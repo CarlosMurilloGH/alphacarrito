@@ -1,0 +1,21 @@
+.navbarcontainer{
+    background-color: #202C33;
+    box-shadow:-10px 5px 25px -12px rgb(28 39 60 / 20%)
+}
+
+.navbarbox{
+    width:80vw;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin:auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2vw;
+}
+
+.menuitem{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
