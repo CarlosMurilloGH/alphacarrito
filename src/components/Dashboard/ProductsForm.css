@@ -2,10 +2,11 @@
     display: block;
     border-style: solid;
     border-width: 1px;
-    border-color: rgb(160, 160, 160);
+    border-color: #00A884;
     background-color: #111B21;
     color:white;
     padding:2rem;
+    border-radius: 5px;
 }
 
 
@@ -20,8 +21,15 @@ input.inputForm {
     width:90%
 }
 
+input.inputForm::placeholder {
+    color:white;
+}
+
 .uploadbox{
     margin-bottom:1rem;
+}
+.uploadbox label{
+    color:white;
 }
 
 .nombrebox{
@@ -37,7 +45,7 @@ input.inputForm {
     margin-bottom:1rem; 
 }
 
-input.inputForm {
+/* input.inputForm {
     width: 90%;
     background: #202C33;
     border: none;
@@ -46,8 +54,18 @@ input.inputForm {
     border-width: 1px;
     border-color: rgb(160, 160, 160);
     color:white;
+} */
+
+input.inputForm {
+    width: 90%;
+    display: block;
+    padding: 0.8rem!important;
+    border-radius: 5px;
+    border:1px solid #00A884;
+    background-color: #111B21;
+    color:white
 }
 
-input.inputForm::placeholder {
+/* input.inputForm::placeholder {
     color: white;
-}
+} */

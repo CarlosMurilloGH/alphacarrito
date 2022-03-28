@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {app} from "../fb";
-import { Carrito } from "./Carrito";
-import { Footer } from "./Footer";
-import { HeaderTienda } from "./HeaderTienda";
-import { SingleProduct } from "./SingleProduct";
+import { app } from "../../fb";
+import { Carrito } from "../Tienda/Carrito";
+import { Footer } from "../Tienda/Footer";
+import { HeaderTienda } from "../Tienda/HeaderTienda";
+import { SingleProduct } from "../Tienda/SingleProduct";
 import "./Tienda.css";
 
 export const Tienda = () => {
@@ -50,6 +50,7 @@ export const Tienda = () => {
 			<div>
 				<Footer />
 			</div>
+			
 		</div>
 	);
 };

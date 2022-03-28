@@ -3,6 +3,7 @@ import { app } from "../../fb";
 import { ProductsForm } from "./ProductsForm";
 import { SingleProductList } from "../SingleProductList";
 import "./PanelProductos.css";
+
 const initialState = {
   id: "",
   name: "",

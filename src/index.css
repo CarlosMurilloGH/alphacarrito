@@ -1,3 +1,7 @@
+:root{
+    --primary-color:#00a884;
+}
+
 *{
     padding:0px;
     margin:0px;
@@ -6,7 +10,7 @@
 
 .BotonPositivo{
     border: none;
-    background-color: #00a884;
+    background-color:#00a884 ;
     color:white;
     padding: 7px 10px;
     border-radius: 5px;
@@ -26,7 +30,7 @@
 
 .BotonComprar{
     border: none;
-    background-color: #00a884;
+    background-color: var(--primary-color);
     color:white;
     padding: 7px 10px;
     border-radius: 5px;

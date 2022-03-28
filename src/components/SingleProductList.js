@@ -22,7 +22,6 @@ export const SingleProductList = (props) => {
 				alt={data.name}
 			/>
 			<p className="productCardListName">{data.name}</p>
-			<p className="productCardListDescription">{data.description}</p>
 			<p className="productCardListPrice">S/.{data.price}</p>
 			<button className="BotonNegativo" onClick={onDeleteLink}>Eliminar</button>
 		</div>

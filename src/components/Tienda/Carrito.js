@@ -1,9 +1,10 @@
 import React, {  useContext } from "react";
 import "./Carrito.css";
-import { CartContext } from "../contexts/CartContext";
+import { CartContext } from "../../contexts/CartContext";
 
 export const Carrito = () => {
   const [{ items },{addItem,removeItem}] = useContext(CartContext);
+
 
   // eslint-disable-next-line
   //const { items } = useCart();
@@ -18,9 +19,9 @@ export const Carrito = () => {
     items.forEach((item) => {
       newArray.push();
       total = total + parseFloat(item.price*item.qnty);
-      string = string + `*${item.name}* = *${item.price}** X*${item.qnty}** `;
+      string = string + `%0a${item.name} = S/.${item.price} * ${item.qnty}`;
     });
-    let end = `Hola%2C+vengo+de+la+app+de+carlos+y+quiero+comprar%0D%0A${string}%0D%0A*Precio:*${total}**%0D%0A*Gracias*%21`;
+    let end = `Hola,%20vengo%20de%20la%20tienda%20virtual,%20este%20es%20mi%20pedido:%0a${string}%0aPrecio:S/.${total}%0a%20Gracias`;
     object.string = end;
     object.total = total;
 

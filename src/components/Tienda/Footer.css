@@ -1,10 +1,32 @@
 .footercontainer{
+    border-top: 1px solid white;
+    background-color: #0A1014;
+}
+
+.footercolumns{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
-    padding: 1rem;
+    padding:2rem 1rem
+}
+
+.creditoscontainer{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     border-top: 1px solid white;
-    background-color: #0A1014;
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+
+.creditoscontainer a{
+    color:#00A884;
+    text-decoration: none;
+}
+
+.creditoscontainer p{
+    color:white;
 }
 
 .titulofooter{
@@ -19,37 +41,16 @@
 
 .logocolumn{
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .columnafooter1 p,h2{
     color:white;
 }
 
-
-.gridhorario{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    color:white;
-}
-
-.gridhoras{
-    display: flex;
-}
-
-.horadespues{
-    margin: auto;
-}
-
-.gridpagos{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr  1fr 1fr;
-    row-gap: 1rem;
-    justify-content: left;
-    align-items: center;
-    margin: left;
-    width: 60%;
-
+.numeronegocio p{
+    color: white;
 }
 
 .formapagoimg{
@@ -80,13 +81,13 @@ img.redesicon {
 }
 
 @media (max-width: 1600px){
-    .footercontainer{
+    .footercolumns{
         grid-template-columns: 1fr 1fr!important;
     }
 }
 
 @media (max-width: 1100px){
-    .footercontainer{
+    .footercolumns{
         grid-template-columns: 1fr!important;
     }
 }

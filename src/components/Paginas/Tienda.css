@@ -1,5 +1,7 @@
 .tiendaContainer{
 background-color:#0a1014;
+min-height: 100vh;
+overflow: hidden;
 }
 .tiendagrid {
     display: flex;

@@ -33,16 +33,7 @@ export const ProductsForm = (props) => {
 					className="inputForm"
 				/>
 			</div>
-			<div className="descripcionbox">
-				<input
-					type="text"
-					onChange={(e) => setData({ ...data, description: e.target.value })}
-					value={data.description}
-					name="description"
-					placeholder="descripción del producto"
-					className="inputForm"
-				/>
-			</div>
+
 			<div className="preciobox">
 				<input
 					type="number"

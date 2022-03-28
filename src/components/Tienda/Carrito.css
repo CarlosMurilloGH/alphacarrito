@@ -1,10 +1,11 @@
 .carritobox{
     background-color: #f1f1f1;
     color:black;
-    padding:20px;
+    padding:1rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* adds shadow on hover */
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    
   }
  
 .gridcart{
@@ -60,6 +61,7 @@ a.anchorcomprar{
   color: white;
   margin-top: 15px;
   margin-bottom: 15px;
+
 }
 
 .productocarrito{
