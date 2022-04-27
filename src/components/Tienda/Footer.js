@@ -74,31 +74,39 @@ export const Footer = () => {
               <h2 className="titulofooter">Redes Sociales</h2>
               <div className="redesgrid">
                 <div>
+                  <a href='https://api.whatsapp.com/send?phone=51940922980&text=Hola,%20vengo%20del%20demo'>
                   <img
                     className="redesicon"
                     src={whatsapp}
                     alt="whatsapp logo"
                   />
+                  </a>
                 </div>
 
                 <div>
+                  <a href='https://www.facebook.com/Inbokzer'>
                   <img
                     className="redesicon"
                     src={facebook}
                     alt="facebook logo"
                   />
+                  </a>
                 </div>
 
                 <div>
+                  <a href='https://www.instagram.com/inbokzer/'>
                   <img
                     className="redesicon"
                     src={instagram}
                     alt="instagram logo"
                   />
+                  </a>
                 </div>
 
                 <div>
+                  <a href='https://inbokzer.com'>
                   <img className="redesicon" src={google} alt="google logo" />
+                  </a>
                 </div>
               </div>
             </div>
