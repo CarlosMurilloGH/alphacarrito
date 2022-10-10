@@ -21,7 +21,7 @@ export const Carrito = () => {
       total = total + parseFloat(item.price*item.qnty);
       string = string + `%0a${item.name} = S/.${item.price} * ${item.qnty}`;
     });
-    let end = `Hola,%20vengo%20de%20la%20tienda%20virtual,%20este%20es%20mi%20pedido:%0a${string}%0aPrecio:S/.${total}%0a%20Gracias`;
+    let end = `Hola,%20vengo%20de%20la%20tienda%20virtual,%20este%20es%20mi%20pedido:%0a${string}%0aPrecio:S/.${total.toFixed(2)}%0a%20Gracias`;
     object.string = end;
     object.total = total;
 
@@ -58,7 +58,7 @@ export const Carrito = () => {
           <hr></hr>
           <div className="totalcarrito">
             <p className="totallabel">Total:</p>
-            <p className="totalnumero">S/.{ getString().total}</p>
+            <p className="totalnumero">S/.{ getString().total.toFixed(2)}</p>
           </div>
          
           <button className="BotonComprar">

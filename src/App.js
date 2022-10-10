@@ -19,7 +19,7 @@ function App() {
 		<div className="App">
 			<CartContextProvider>
 				<CartProvider>
-					<Routes>
+					{/* <Routes>
 						<Route>
 							<Route exact path="/" element={<Tienda />} />
 							<Route exact path="/iniciar" element={<Login />} />
@@ -32,7 +32,8 @@ function App() {
 								<Route path="productos" element={<PanelProductos />} />
 							</Route>						
 						</Route>
-					</Routes>
+					</Routes> */}
+					<Login />
 				</CartProvider>
 			</CartContextProvider>			
 		</div>

@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 const CLAVE = "articulos";
 export const CartContext = createContext([]);
+
 export const CartContextProvider = ({ children }) => {
   const [items, setitems] = useState([]);
   useEffect(() => {
@@ -8,6 +9,7 @@ export const CartContextProvider = ({ children }) => {
     let productos = JSON.parse(articulos) || [];
     setitems(productos);
   }, []);
+
   const addItem = (item) => {
     item.qnty = 1; //se asigna nueva variable al objeto articulo(cantidad)
 

@@ -1,125 +1,100 @@
-import { useState } from "react";
+import React,{useState} from "react";
 import "./Login.css";
-import {
-  // createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-} from "firebase/auth";
-import { auth } from "../../fb";
-import { useLocation, useNavigate } from "react-router";
+import { GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import {auth} from "../../fb";
+import {useNavigate} from "react-router-dom";
+import AuthProvider from "../AuthProvider";
 
 function Login() {
-  // const [registerEmail, setRegisterEmail] = useState("");
-  // const [registerPassword, setRegisterPassword] = useState("");
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  // eslint-disable-next-line
-  const [user, setUser] = useState({});
 
   const navigate=useNavigate();
-  const location =useLocation();
+  // const [currentUser,setCurrentUser]=useState(null);
+  /*
+  Estados:
+  0.-Inicializado
+  1.-Loading
+  2.-Login Completado
+  3.-Login pero sin registro
+  4.-no hay nadie logueado
+  5.-Login Completado
+  */
+  const [state,setCurrentState]=useState(0);
 
+  // //Vamos a detectar si el usuario está autenticado
+  // useEffect(()=>{
+  //   setCurrentState(1)
+  //   //con esta función de firebase comprobamos en cada render en que fase está el usuario
+  //   onAuthStateChanged(auth,async(user)=>{
+  //     if(user){
+  //       //Acá comprobamos si el usuario existe
+  //       const isRegistered = await userExists(user.uid);
+  //       if(isRegistered){
+  //         //usuario logueado
+  //         //redirigir a dashboard
+  //         navigate("./Panel");
+  //         setCurrentState(2);
+  //       }else{
+  //         //logueado pero no registrado
+  //         //redirigir a elegir nombre de negocio
+  //         navigate("./Nombra-tu-tienda");
+  //         setCurrentState(3);
+  //       }
+  //     }else{
+  //       //no hay nadie logueado
+  //       setCurrentState(4);
+  //       console.log("no hay nadie autenticado")
+  //     }
+  //   });
+  // },[navigate]);
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+  //con esto nos logeamos
+  async function handleOnClick(){
+    const googleProvider = new GoogleAuthProvider();
+    await signInWithGoogle(googleProvider);
 
-  // const register = async () => {
-  //   try {
-  //     const user = await createUserWithEmailAndPassword(
-  //       auth,
-  //       registerEmail,
-  //       registerPassword
-  //     );
-  //     console.log(user);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }if(location.state?.from) {
-  //     navigate(location.state.from);
-  //   }
-  // };
-
-  const login = async () => {
-    try {
-      const user = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      console.log(user);
-    } catch (error) {
-      console.log(error.message);
-    } if(location.state?.from) {
-      navigate(location.state.from);
+    async function signInWithGoogle(googleProvider){
+      try {
+        const res = await signInWithPopup(auth,googleProvider);
+        console.log(res);
+      } catch (error) {
+        console.error(error);
+      }
     }
-  };
+  }
 
+    function handleUserLoggedIn(user){
+      navigate("/panel");
+    }
 
-  return (
-    <div className="Loginregistercontainer">
+    function handleUserNotRegistered(user){
+      navigate("/nombra-tu-tienda");
+    }
 
-      <div className="formscontainer">
+    function handleUserNotLoggedIn(){
+      setCurrentState(4);
+    }
 
-      {/* <div className="formbox">
-          <h2 className="titlelogin">Registrate</h2>
-          <div className="inputcontainer">
-            <div className="inputbox">
-            <input
-              className="inputstyle"
-              placeholder="Email"
-              onChange={(event) => {
-                setRegisterEmail(event.target.value);
-              }}
-            />
-            </div>
-            <div className="inputbox">
-            <input
-              className="inputstyle"
-              placeholder="Contraseña"
-              type="password"
-              onChange={(event) => {
-                setRegisterPassword(event.target.value);
-              }}
-            />
-            </div>
-            <div className="botoncontainer">
-              <button className="botonlogin" onClick={register}> Crear cuenta</button>
-            </div>            
-          </div>
-        </div> */}
-
-        <div className="formbox">
-          <h2 className="titlelogin"> Inicia tu sesión </h2>
-          <div className="inputcontainer">
-            <div className="inputbox">
-              <input
-                className="inputstyle"
-                placeholder="Email"
-                onChange={(event) => {
-                  setLoginEmail(event.target.value);
-                }}
-              />
-            </div>
-            <div className="inputbox">
-            <input
-              className="inputstyle"
-              placeholder="Contraseña"
-              type="password"
-              onChange={(event) => {
-                setLoginPassword(event.target.value);
-              }}
-            />
-            </div>
-            <div className="botoncontainer">
-              <button className="botonlogin" onClick={login}>Iniciar</button>
-            </div>
-          </div>
+     
+    if(state == 4){
+      return (
+        <div className="Loginregistercontainer">
+          <button onClick={handleOnClick}>Login Google</button>
         </div>
+      );
+    }
+    
+    return (
+      <AuthProvider 
+      onUserLoggedIn={handleUserLoggedIn}
+      onUserNotRegistered={handleUserNotRegistered}
+      onUserNotLoggedIn={handleUserNotLoggedIn}
+      >
+        <p>Loading...</p>
+      </AuthProvider>
+    );
+  }
+  
 
-      </div>
-      
-    </div>
-  );
-}
+
 
 export default Login;
